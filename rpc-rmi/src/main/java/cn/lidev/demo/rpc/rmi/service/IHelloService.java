@@ -8,6 +8,7 @@ import java.rmi.RemoteException;
  * Email: logonovo@gmail.com
  * @Date 2018/10/4 11:47
  */
-public interface IHelloService extends Remote{
+public interface IHelloService<T> extends Remote{
     String sayHello(String str) throws RemoteException;
+    ServerResponse<T> sayHello(Request request) throws RemoteException;
 }

@@ -18,4 +18,9 @@ public class HelloServiceImpl extends UnicastRemoteObject implements IHelloServi
     public String sayHello(String str) throws RemoteException{
         return "hello,"+str;
     }
+
+    @Override
+    public ServerResponse sayHello(Request request) throws RemoteException{
+        return ServerResponse.buildSuccess("hello:"+request.getName());
+    }
 }
